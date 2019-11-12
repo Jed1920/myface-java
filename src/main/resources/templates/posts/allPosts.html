@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
 </head>
 
 <body>
-<h1>All Posts Page</h1>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="posts">Post</a>
+    <a href="users">User</a>
+</nav>
+
+<a href="/posts/create">New Post</a>
+
+<h2>All Posts</h2>
+<ol>
+    <li th:each="post: ${model.posts}">
+        <p>Sender - <span th:text="${post.Sender.DisplayName}"/></p>
+        <p>Receiver - <span th:text="${post.Receiver.DisplayName}"/></p>
+        <img th:src="${post.Image}" alt="Message Picture"/>
+        <p th:text="${post.Message}"/>
+    </li>
+</ol>
+
+<a href="posts?page=1">1</a>
+<a href="posts?page=2">2</a>
+<a href="posts?page=3">3</a>
+
 </body>
 </html>

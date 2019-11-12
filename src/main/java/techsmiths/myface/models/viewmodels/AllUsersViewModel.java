@@ -2,6 +2,7 @@ package techsmiths.myface.models.viewmodels;
 
 import techsmiths.myface.models.dbmodels.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

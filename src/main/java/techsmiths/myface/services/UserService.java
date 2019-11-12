@@ -31,12 +31,12 @@ public class UserService extends DatabaseService {
         jdbi.withHandle(handle ->
                 handle.createUpdate(
                             "UPDATE users SET " +
-                                    "username = :username" +
-                                    "email = :email" +
-                                    "first_name = :firstName" +
-                                    "last_name = :lastName" +
-                                    "profile_image = :profileImage" +
-                                    "banner_image = :bannerImage" +
+                                    "username = :username," +
+                                    "email = :email," +
+                                    "first_name = :firstName," +
+                                    "last_name = :lastName," +
+                                    "profile_image = :profileImage," +
+                                    "banner_image = :bannerImage " +
                             "WHERE id = :id")
                         .bind("username", user.getUsername())
                         .bind("email", user.getEmail())

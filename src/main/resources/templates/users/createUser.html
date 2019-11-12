@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
 </head>
 
+<nav>
+    <a href="/">Home</a>
+    <a href="/posts">Post</a>
+    <a href="/users">User</a>
+</nav>
+
 <body>
-<h1>Create User Page</h1>
+<section>
+    <h1>Create New User</h1>
+    <form th:action="@{/users/create}" method="post">
+        <label> First Name </label>
+        <input type="text" name="firstName">
+
+        <label> Last Name </label>
+        <input type="text" name="lastName">
+
+        <label> Username </label>
+        <input type="text" name="username">
+
+        <label> Email </label>
+        <input type="text" name="email">
+
+        <label> Profile Image URL </label>
+        <input type="text" name="profileImage">
+
+        <label> Banner Image URL </label>
+        <input type="text" name="bannerImage">
+
+        <input type="submit" value="Submit Information">
+    </form>
+</section>
 </body>
 </html>

@@ -41,7 +41,7 @@ public class UserController {
         return new ModelAndView("users/user", "model", userViewModel);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{id}/update", method = RequestMethod.POST)
     public RedirectView updateUser(@PathVariable("id") int id, @ModelAttribute User user) {
         userService.updateUser(id, user);
         return new RedirectView(String.format("/users/%s", id));
@@ -53,7 +53,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public RedirectView createUser(User user) {
+    public RedirectView createUser(@ModelAttribute User user) {
         userService.createUser(user);
         return new RedirectView("/users");
     }
