@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import techsmiths.myface.models.dbmodels.Post;
+import techsmiths.myface.models.dbmodels.User;
 import techsmiths.myface.models.viewmodels.AllPostsViewModel;
+import techsmiths.myface.models.viewmodels.CreatePostsViewModel;
 import techsmiths.myface.services.PostService;
+import techsmiths.myface.services.UserService;
 
 import java.util.List;
 
@@ -37,7 +40,11 @@ public class PostController {
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public ModelAndView getCreatePostPage() {
-        return new ModelAndView("posts/createPost");
+        UserService userService = new UserService();
+        List<User> users = userService.getAllUsers(1000000, 0);
+
+        CreatePostsViewModel createPostViewModel = new CreatePostsViewModel(users);
+        return new ModelAndView("posts/createPost","model", createPostViewModel);
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)

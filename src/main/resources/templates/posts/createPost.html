@@ -6,22 +6,28 @@
 
 <body>
 
+<nav>
+    <a href="/">Home</a>
+    <a href="posts">Post</a>
+    <a href="users">User</a>
+</nav>
+
 <section>
     <h1>Create Post</h1>
     <form th:action="@{/posts/create}" method="post">
 
         <label> From </label>
         <select name="sender.id">
-            <option value="5">Carleen Allan</option>
-            <option value="6">Sophie Dinwoodie</option>
-            <option value="7">Launce Luttger</option>
+            <option th:each = "user :${model.users}" th:value="${user.Key}">
+                <span th:text = "${user.Value}"></span>
+            </option>
         </select>
 
         <label> To </label>
         <select name="receiver.id">
-            <option value="5">Carleen Allan</option>
-            <option value="6">Sophie Dinwoodie</option>
-            <option value="7">Launce Luttger</option>
+            <option th:each = "user :${model.users}" th:value="${user.Key}">
+                <span th:text = "${user.Value}"></span>
+            </option>
         </select>
 
         <label> Image URL </label>
