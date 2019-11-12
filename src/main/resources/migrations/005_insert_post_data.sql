@@ -28,3 +28,5 @@ VALUES
 (1, 11, "https://picsum.photos/id/322/450/600", "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum."),
 (1, 4, "https://picsum.photos/id/323/450/600", "Etiam pretium iaculis justo."),
 (7, 4, "https://picsum.photos/id/324/450/600", "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.");
+
+SELECT * FROM posts;
