@@ -2,38 +2,42 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
+    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/posts">Post</a>
-    <a href="/users">User</a>
-</nav>
-
 <body>
-<section>
+<div th:replace="fragments/navbar.html :: navbar"></div>
+
+<main>
     <h1>Create New User</h1>
     <form th:action="@{/users/create}" method="post">
-        <label> First Name </label>
-        <input type="text" name="firstName">
+        <label> First Name
+            <input type="text" name="firstName">
+        </label>
 
-        <label> Last Name </label>
-        <input type="text" name="lastName">
+        <label> Last Name
+            <input type="text" name="lastName">
+        </label>
 
-        <label> Username </label>
-        <input type="text" name="username">
+        <label> Username
+            <input type="text" name="username">
+        </label>
 
-        <label> Email </label>
-        <input type="text" name="email">
+        <label> Email
+            <input type="text" name="email">
+        </label>
 
-        <label> Profile Image URL </label>
-        <input type="text" name="profileImage">
+        <label> Profile Image URL
+            <input type="text" name="profileImage">
+        </label>
 
-        <label> Banner Image URL </label>
-        <input type="text" name="bannerImage">
+        <label> Banner Image URL
+            <input type="text" name="bannerImage">
+        </label>
 
         <input type="submit" value="Submit Information">
     </form>
-</section>
+</main>
 </body>
 </html>

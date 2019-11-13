@@ -33,7 +33,7 @@ public class PostController {
         int offset = page_index * PAGE_SIZE;
 
         List<Post> posts = postService.getAllPosts(PAGE_SIZE, offset);
-        AllPostsViewModel postsViewModel = new AllPostsViewModel(posts);
+        AllPostsViewModel postsViewModel = new AllPostsViewModel(posts,page_index+1);
 
         return new ModelAndView("posts/allPosts", "model", postsViewModel);
     }

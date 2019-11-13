@@ -1,0 +1,53 @@
+
+.postnav{
+        display: inline-block;
+        background-color:#5abee9;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        color:white;
+        font-size: 30px;
+        font-family:"Sans-Serif",arial;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        border:3px solid white;
+        border-radius: 45px;
+        
+
+        &:hover{
+            background-color:white;
+            color: #5abee9; 
+    }
+}
+@media only screen and (max-width: 700px) {
+    .postnav{
+        display: inline-block;
+        margin-top:15px;
+        margin-left:50px;
+            background-color:white;
+            color:#5abee9;
+            font-size: 20px;
+            font-family:"Sans-Serif",arial;
+            text-decoration: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            border:3px solid #5abee9;
+            border-radius: 45px;
+            
+    
+            &:hover{
+                background-color:#5abee9;
+                color: white; 
+            }
+        }
+    }
+
+
+.postlist{
+    padding-inline-start: 10px;
+}
+
+.profimg{
+    width:100%;
+    max-width: 500px;
+}

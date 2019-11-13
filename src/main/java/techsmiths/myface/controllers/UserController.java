@@ -28,7 +28,7 @@ public class UserController {
         int offset = page_index * PAGE_SIZE;
 
         List<User> users = userService.getAllUsers(PAGE_SIZE, offset);
-        AllUsersViewModel allUsersViewModel = new AllUsersViewModel(users);
+        AllUsersViewModel allUsersViewModel = new AllUsersViewModel(users, page_index + 1);
 
         return new ModelAndView("users/allUsers", "model", allUsersViewModel);
     }

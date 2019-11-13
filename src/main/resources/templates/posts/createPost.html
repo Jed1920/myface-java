@@ -2,43 +2,45 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
+    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="posts">Post</a>
-    <a href="users">User</a>
-</nav>
+<div th:replace="fragments/navbar.html :: navbar"></div>
 
-<section>
+<main>
     <h1>Create Post</h1>
     <form th:action="@{/posts/create}" method="post">
 
-        <label> From </label>
-        <select name="sender.id">
-            <option th:each = "user :${model.users}" th:value="${user.Key}">
-                <span th:text = "${user.Value}"></span>
-            </option>
-        </select>
+        <label> From
+            <select name="sender.id">
+                <option th:each="user :${model.users}" th:value="${user.Key}">
+                    <span th:text="${user.Value}"></span>
+                </option>
+            </select>
+        </label>
 
-        <label> To </label>
-        <select name="receiver.id">
-            <option th:each = "user :${model.users}" th:value="${user.Key}">
-                <span th:text = "${user.Value}"></span>
-            </option>
-        </select>
+        <label> To
+            <select name="receiver.id">
+                <option th:each="user :${model.users}" th:value="${user.Key}">
+                    <span th:text="${user.Value}"></span>
+                </option>
+            </select>
+        </label>
 
-        <label> Image URL </label>
-        <input type="text" name="image">
+        <label> Image URL
+            <input type="text" name="image">
+        </label>
 
-        <label> Message </label>
-        <input type="text" name="message">
+        <label> Message
+            <input type="text" name="message">
+        </label>
 
         <input type="submit" value="Submit Post">
     </form>
-</section>
+</main>
 
 </body>
 </html>

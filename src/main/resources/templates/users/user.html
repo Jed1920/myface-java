@@ -2,41 +2,40 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
+    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<nav>
-    <a href="/">Home</a>
-    <a href="/posts">Post</a>
-    <a href="/users">User</a>
-</nav>
+<div th:replace="fragments/navbar.html :: navbar"></div>
 
-<h1>User -
-    <span th:text="${model.Id}"/>
-    -
-    <span th:text="${model.DisplayName}"/>
-</h1>
+<main>
+    <h1>User -
+        <span th:text="${model.Id}"/>
+        -
+        <span th:text="${model.DisplayName}"/>
+    </h1>
 
-<section>
-    <img th:src="${model.BannerImage}" atl="Cover Photo">
-    <img th:src="${model.ProfileImage}" atl="Profile Image">
-    <p>Username - <span th:text="${model.Username}"/></p>
-    <p>Email - <span th:text="${model.Email}"/></p>
-</section>
+    <section>
+        <img th:src="${model.BannerImage}" atl="Cover Photo">
+        <img th:src="${model.ProfileImage}" atl="Profile Image">
+        <p>Username - <span th:text="${model.Username}"/></p>
+        <p>Email - <span th:text="${model.Email}"/></p>
+    </section>
 
-<section>
-    <h3>Edit User Information</h3>
-    <form th:action="@{{id}/update (id = ${model.Id})}" method="post">
-        <input type="text" name="firstName" th:value="${model.FirstName}">
-        <input type="text" name="lastName" th:value="${model.LastName}">
-        <input type="text" name="username" th:value="${model.Username}">
-        <input type="text" name="email" th:value="${model.Email}">
-        <input type="text" name="profileImage" th:value="${model.ProfileImage}">
-        <input type="text" name="bannerImage" th:value=${model.BannerImage}>
-        <input type="submit" value="Submit Changes">
-    </form>
-</section>
-
+    <section>
+        <h3>Edit User Information</h3>
+        <form th:action="@{{id}/update (id = ${model.Id})}" method="post">
+            <input type="text" name="firstName" th:value="${model.FirstName}">
+            <input type="text" name="lastName" th:value="${model.LastName}">
+            <input type="text" name="username" th:value="${model.Username}">
+            <input type="text" name="email" th:value="${model.Email}">
+            <input type="text" name="profileImage" th:value="${model.ProfileImage}">
+            <input type="text" name="bannerImage" th:value=${model.BannerImage}>
+            <input type="submit" value="Submit Changes">
+        </form>
+    </section>
+</main>
 
 </body>
 </html>

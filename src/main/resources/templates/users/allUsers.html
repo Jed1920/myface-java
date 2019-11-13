@@ -2,32 +2,32 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
+    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<nav>
-    <a href="/">Home</a>
-    <a href="posts">Post</a>
-    <a href="users">User</a>
-</nav>
+<div th:replace="fragments/navbar.html :: navbar"></div>
 
-<a href="/users/create">Create New User</a>
+<main>
+    <a href="/users/create">Create New User</a>
 
-<h1>All Users Page</h1>
-<ol>
-    <li th:each="user: ${model.users}">
-        <p th:text="${user.Id}"/>
+    <h1>All Users Page</h1>
+    <ol>
+        <li th:each="user: ${model.users}">
+            <p th:text="${user.Id}"/>
 
-        <a th:href="@{users/{id}(id = ${user.Id})}">
-            <p th:text="${user.Username}">
-            </p>
-        </a>
+            <a th:href="@{users/{id}(id = ${user.Id})}">
+                <p th:text="${user.Username}">
+                </p>
+            </a>
 
-        <img th:src="${user.ProfileImage}" alt="Profile Picture">
-    </li>
-</ol>
+            <img th:src="${user.ProfileImage}" alt="Profile Picture">
+        </li>
+    </ol>
 
-<a href="users?page=1">1</a>
-<a href="users?page=2">2</a>
+    <a th:href="${model.previousPageUrl}">Previous</a>
+    <a th:href="${model.nextPageUrl}">Next</a>
+</main>
 </body>
 </html>
