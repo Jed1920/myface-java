@@ -27,16 +27,16 @@
                 </tr>
             </table>
             <div class="messageContainer">
-            <h3 class="messageTitle">Message</h3>
-            <img th:src="${post.Image}" alt="Message Picture" class="messageImg"/>
-            <p th:text="${post.Message}" class="message"/>
+                <h3 class="messageTitle">Message</h3>
+                <img th:src="${post.Image}" alt="Message Picture" class="messageImg"/>
+                <p th:text="${post.Message}" class="message"/>
             </div>
 
         </li>
     </ol>
     <div class="bothButtons">
-    <a th:href="${model.previousPageUrl}" class="pageButton">< Previous</a>
-    <a th:href="${model.nextPageUrl}" class="pageButton">Next ></a>
+        <a th:href="${model.previousPageUrl}" class="pageButton">< Previous</a>
+        <a th:href="${model.nextPageUrl}" class="pageButton">Next ></a>
     </div>
 
 </main>
