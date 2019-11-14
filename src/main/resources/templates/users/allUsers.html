@@ -2,32 +2,32 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
-    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <link rel="stylesheet" href="/styles/userStyle.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+
 <div th:replace="fragments/navbar.html :: navbar"></div>
+<a href="/users/create" class="addButtonItem">Create New User</a>
 
 <main>
-    <a href="/users/create">Create New User</a>
+k
 
-    <h1>All Users Page</h1>
-    <ol>
-        <li th:each="user: ${model.users}">
-            <p th:text="${user.Id}"/>
-
-            <a th:href="@{users/{id}(id = ${user.Id})}">
-                <p th:text="${user.Username}">
-                </p>
-            </a>
-
-            <img th:src="${user.ProfileImage}" alt="Profile Picture">
-        </li>
+    <h1 class="title">All Users</h1>
+    <ol class="iconList">
+        <a th:each="user: ${model.users}" th:href="@{users/{id}(id = ${user.Id})}" class="profileLink">
+            <li class="profile">
+                <p th:text="${user.Username}" class="username"/>
+                <p th:text="${user.DisplayName}" class="profileName"/>
+                <img th:src="${user.ProfileImage}" alt="Profile Picture" class="profImg">
+            </li>
+        </a>
     </ol>
-
-    <a th:href="${model.previousPageUrl}">Previous</a>
-    <a th:href="${model.nextPageUrl}">Next</a>
+<div class="bothButtons">
+    <a th:href="${model.previousPageUrl}" class="pageButton">< Previous</a>
+    <a th:href="${model.nextPageUrl}" class="pageButton">Next ></a>
+</div>
 </main>
 </body>
 </html>

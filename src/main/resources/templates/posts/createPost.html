@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
-    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <link rel="stylesheet" href="/styles/postStyle.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -19,7 +19,7 @@
                 <option th:each="user :${model.users}" th:value="${user.Key}">
                     <span th:text="${user.Value}"></span>
                 </option>
-            </select>
+            </select>#
         </label>
 
         <label> To

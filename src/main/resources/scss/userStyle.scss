@@ -1,0 +1,52 @@
+@import 'mixins';
+@import 'navbar';
+@import 'pageButtons';
+
+$primaryColor:  #2dace3;
+
+.addButtonItem {
+    @include addButton;
+}
+
+.title{
+    @include title;
+}
+
+.iconList{
+    @include iconList;
+}
+
+.profile{
+    text-align: center;
+    color:white;
+    font-size: 20px;
+    font-family:"Sans-Serif",arial;
+    background-color:$primaryColor;
+    border: 2px solid $primaryColor;
+    border-radius: 30px;
+    margin: 20px;
+}
+.profileLink{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color:white;
+}
+
+.profileName{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin:5px;
+}
+
+.username{
+    margin:0;
+}
+
+.profImg{
+    border:5px solid white;
+    border-radius:50%;
+    width:90%;
+    min-width:200px;
+    max-width: 350px;
+}

@@ -1,0 +1,17 @@
+$primaryColor:  #2dace3;
+
+.pageButton{
+    text-decoration: none;
+    font-size: 20px;
+    color:#1da1da;
+    text-align: center;
+    font-size: 20px;
+    font-family:"Sans-Serif",arial;
+    &:hover{
+        background-color:white;
+        color: $primaryColor; 
+    }
+}
+.bothButtons{
+    text-align: center;
+}

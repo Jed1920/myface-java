@@ -1,0 +1,68 @@
+@import 'mixins';
+@import 'navbar';
+@import 'pageButtons';
+
+$primaryColor:  #2dace3;
+$secondaryColor:  #1da1da;
+
+.addButtonItem {
+    @include addButton();
+}
+
+.title{
+    @include title;
+}
+
+.iconList{
+    @include iconList;
+
+    li{
+    margin:20px;
+    width:450px;
+    }
+}
+
+.messageUsersTable{
+    margin-left:auto;
+    margin-right:auto;
+    width: 90%;
+    text-align: center;
+
+    th{
+        color:white;
+        font-size: 20px;
+        font-family:"Sans-Serif",arial;
+        font-weight:bold;
+        background-color:$secondaryColor;
+    }
+    td{
+        color:$secondaryColor;
+        font-size: 25px;
+        font-family:"Sans-Serif",arial;
+        background-color:white;
+        border-color:white 
+    }
+}
+
+.messageContainer{
+    border:2px solid $secondaryColor;
+    border-radius:30px;
+    text-align:center;
+}
+.messageTitle{
+    margin-top:0.5em;
+    color:$primaryColor;
+    font-size: 20px;
+    font-family:"Sans-Serif",arial;
+    font-weight:bold;
+}
+.messageImg{
+    width:90%;
+    max-width: 500px;
+}
+.message{ 
+    margin:10px;
+    width:90%;
+    max-width: 500px;
+    text-align: left;
+}

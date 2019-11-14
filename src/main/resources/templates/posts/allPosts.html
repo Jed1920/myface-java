@@ -2,30 +2,43 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
-    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
-    <link rel="stylesheet" href="/styles/allPostStyle.css"/>
+    <link rel="stylesheet" href="/styles/postStyle.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
 <div th:replace="fragments/navbar.html :: navbar"></div>
-<a href="/posts/create" class = "postnav">New Post</a>
+<a href="/posts/create" class="addButtonItem">New Post</a>
 
 
 <main>
-    <h2>All Posts</h2>
-    <ol class = "postlist">
-        <li th:each="post: ${model.posts}" >
-            <p>Sender - <span th:text="${post.Sender.DisplayName}"/></p>
-            <p>Receiver - <span th:text="${post.Receiver.DisplayName}"/></p>
-            <img th:src="${post.Image}" alt="Message Picture" class="profimg"/>
-            <p th:text="${post.Message}"/>
+    <h2 class="title">All Posts</h2>
+    <ol class="iconList">
+        <li th:each="post: ${model.posts}">
+            <table class="messageUsersTable">
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                </tr>
+                <tr>
+                    <td th:text="${post.Sender.DisplayName}"/>
+                    <td th:text="${post.Receiver.DisplayName}"/>
+                </tr>
+            </table>
+            <div class="messageContainer">
+            <h3 class="messageTitle">Message</h3>
+            <img th:src="${post.Image}" alt="Message Picture" class="messageImg"/>
+            <p th:text="${post.Message}" class="message"/>
+            </div>
+
         </li>
     </ol>
+    <div class="bothButtons">
+    <a th:href="${model.previousPageUrl}" class="pageButton">< Previous</a>
+    <a th:href="${model.nextPageUrl}" class="pageButton">Next ></a>
+    </div>
 
-    <a th:href="${model.previousPageUrl}">Previous</a>
-    <a th:href="${model.nextPageUrl}">Next</a>
 </main>
 
 </body>

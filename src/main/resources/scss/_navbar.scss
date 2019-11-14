@@ -3,17 +3,19 @@ body{
 }
 
 .allnav {
-    background-color: #5abee9;
+    display: block;
     padding-bottom: 5px;
     padding-top: 5px;
-
+    background-color: $primaryColor;
+    position:fixed;
+    top:0;
+    width:100%;
     a {
         color:white;
         font-size: 30px;
         font-family:"Sans-Serif",arial;
         text-decoration: none;
         padding-left: 10px;
-        
         &:hover{
             color: #e5e5e5; 
         }
@@ -27,4 +29,3 @@ body{
 main{
     margin:20px;
 }
-
