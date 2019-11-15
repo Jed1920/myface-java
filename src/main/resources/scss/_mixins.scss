@@ -56,3 +56,27 @@ $primaryColor:  #5abee9;
     padding-inline-start: 0px;
     
 }
+
+@mixin whiteOnBlue{
+    color:white;
+    font-family:"Sans-Serif",arial;
+    background-color:$primaryColor;
+    border: 2px solid $primaryColor;
+}
+
+@mixin blueOnWhite{
+    color:$primaryColor;
+    font-family:"Sans-Serif",arial;
+    background-color:white;
+    border: 2px solid $primaryColor;
+}
+
+@mixin createUserFields{
+    display:block;
+    font-size: 20px;
+    max-width: 400px;
+    min-width: 100px;
+    width:90%;
+    border-radius:5px;
+    margin:10px;
+}

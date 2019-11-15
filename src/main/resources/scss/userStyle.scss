@@ -17,12 +17,9 @@ $primaryColor:  #2dace3;
 }
 
 .profile{
+    @include whiteOnBlue;
     text-align: center;
-    color:white;
     font-size: 20px;
-    font-family:"Sans-Serif",arial;
-    background-color:$primaryColor;
-    border: 2px solid $primaryColor;
     border-radius: 30px;
     margin: 20px;
 }
@@ -50,3 +47,34 @@ $primaryColor:  #2dace3;
     min-width:200px;
     max-width: 350px;
 }
+
+.userInputs{
+    margin-block-start: 1em;
+
+    label{
+    @include blueOnWhite;
+    border:none;
+    text-align: center;
+    font-size: 20px;
+    }
+}
+
+.inputFields{
+    @include blueOnWhite;
+    @include createUserFields;
+}
+.error{
+    @include blueOnWhite;
+    @include createUserFields;
+    border:4px solid #FF6666;
+}
+
+.submitField{
+    @include blueOnWhite;
+    margin:10px;
+    display:block;
+    font-size: 20px;
+    border:2px solid $primaryColor;
+    border-radius:15px;
+}
+

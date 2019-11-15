@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Home Page :: My🙂Face</title>
-    <link rel="stylesheet" href="/styles/allPageStyle.css"/>
+    <link rel="stylesheet" href="/styles/userStyle.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -10,34 +10,35 @@
 <div th:replace="fragments/navbar.html :: navbar"></div>
 
 <main>
-    <h1>Create New User</h1>
-    <form th:action="@{/users/create}" method="post">
+    <h1 class="title">Create New User</h1>
+    <form th:action="@{/users/create}" method="post" class="userInputs" onsubmit="return formValidation()">
         <label> First Name
-            <input type="text" name="firstName">
+            <input type="text" name="firstName" class="inputFields" id="firstName" oninput="fieldValidation('firstName')">
         </label>
 
         <label> Last Name
-            <input type="text" name="lastName">
+            <input type="text" name="lastName" class="inputFields" id="lastName" oninput="fieldValidation('lastName')">
         </label>
 
         <label> Username
-            <input type="text" name="username">
+            <input type="text" name="username" class="inputFields" id="username" oninput="fieldValidation('username')">
         </label>
 
         <label> Email
-            <input type="text" name="email">
+            <input type="text" name="email" class="inputFields" id="email" oninput="fieldValidation('email')">
         </label>
 
         <label> Profile Image URL
-            <input type="text" name="profileImage">
+            <input type="text" name="profileImage" class="inputFields" id="profileImage" >
         </label>
 
         <label> Banner Image URL
-            <input type="text" name="bannerImage">
+            <input type="text" name="bannerImage" class="inputFields" id="bannerImage">
         </label>
 
-        <input type="submit" value="Submit Information">
+        <input type="submit" value="Submit Information" class="submitField" id="submit">
     </form>
 </main>
+<script src="/javascript/formVal.js"></script>
 </body>
 </html>
